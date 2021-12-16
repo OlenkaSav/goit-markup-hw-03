@@ -35,13 +35,21 @@ body {
   outline: 2px solid yellowgreen;
   width: 1230px;
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .logo {
+  display: block;
   color: var(--accent-colour);
   font-family: Raleway;
   font-size: 26px;
   line-height: 1.19;
   text-decoration: none;
+
+  padding-top: 24px; /* Костыль. Не смогла понять почему
+   логотип не хочет выравниваться функцией align-items: center; 
+   секции main-nav*/
+  margin-right: 93px;
 }
 
 .header .studio-style {
@@ -49,8 +57,27 @@ body {
 }
 
 /* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
 
+.nav-site,
+.header {
+  display: flex;
+}
+.nav-site > .item:not(:last-child) {
+  margin-right: 50px;
+}
+.nav-site .item {
+  outline: rebeccapurple solid 2px;
+}
 .nav-site .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--title-text-colour);
   font-weight: 500;
   line-height: 1.14;
@@ -62,7 +89,13 @@ body {
 .nav-site .link:focus {
   color: var(--accent-colour);
 }
-
+.nav-contact {
+  display: flex;
+  margin-left: auto;
+}
+.nav-contact-item.email {
+  margin-right: 50px;
+}
 .nav-contact .email,
 .nav-contact .tel {
   color: var(--primary-text-colour);
@@ -112,6 +145,9 @@ body {
 
   margin-top: 0;
   margin-bottom: 50px;
+}
+.preferences-list {
+  display: flex;
 }
 .preferences-list .content-title {
   color: var(--title-text-colour);
